@@ -1,0 +1,31 @@
+PATAKHA — VERCEL DEPLOYMENT
+
+This package contains the latest game, including eight firework styles,
+lighting effects, four unlock missions, and device-local progress.
+
+DEPLOY THROUGH THE VERCEL WEBSITE
+1. Extract the ZIP.
+2. Create an empty repository at https://github.com/new (private is fine).
+3. Use Add file > Upload files, then upload the extracted files.
+   index.html and vercel.json must be at the repository root.
+   Upload the files themselves, not the ZIP. Commit the files.
+4. Visit https://vercel.com/new, connect GitHub, and import this repository.
+5. Use Framework Preset: Other. Leave Build Command empty.
+   Output Directory: . (one dot). The included vercel.json sets these values.
+   No environment variables or dependencies are needed.
+6. Click Deploy. Open the URL Vercel provides when deployment finishes.
+
+ALTERNATIVE: DEPLOY FROM YOUR COMPUTER
+With Node.js installed, open a terminal inside the extracted folder and run:
+  npx vercel --prod
+Follow the sign-in and new-project prompts.
+
+NOTES
+Progress and high scores are saved separately for each browser and website
+address. Scores from the original hosted site will not automatically move
+to the new Vercel address. Fonts use Google Fonts with local font fallbacks.
+
+Official guides:
+https://vercel.com/docs/deployments
+https://vercel.com/docs/builds/configure-a-build
+https://vercel.com/docs/cli/deploy
