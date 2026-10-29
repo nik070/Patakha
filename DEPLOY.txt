@@ -1,31 +1,46 @@
-PATAKHA — VERCEL DEPLOYMENT
+PATAKHA — FESTIVAL UPDATE 3
 
-This package contains the latest game, including eight firework styles,
-lighting effects, four unlock missions, and device-local progress.
+This is the complete website, ready for your existing Vercel project.
 
-DEPLOY THROUGH THE VERCEL WEBSITE
-1. Extract the ZIP.
-2. Create an empty repository at https://github.com/new (private is fine).
-3. Use Add file > Upload files, then upload the extracted files.
-   index.html and vercel.json must be at the repository root.
-   Upload the files themselves, not the ZIP. Commit the files.
-4. Visit https://vercel.com/new, connect GitHub, and import this repository.
-5. Use Framework Preset: Other. Leave Build Command empty.
-   Output Directory: . (one dot). The included vercel.json sets these values.
-   No environment variables or dependencies are needed.
-6. Click Deploy. Open the URL Vercel provides when deployment finishes.
+WHAT IS NEW
+- Sound is ON for first-time players. It starts after the first interaction.
+- Layered launch whistles, booms, sizzling fountains, crackles and stereo effects.
+- Mute and volume controls, with the player's choice saved on this device.
+- 12 cracker types, including Peacock Bloom, Rangoli Ring, Thunder Garland
+  and Tricolor Sky.
+- Eight sequential missions, saved unlocks, a visible next-reward panel,
+  a combo countdown, golden double-score stars and round medals.
+- A refreshed desktop/mobile layout and illustrated cracker collection.
+- The existing Adsterra 300 x 250 banner is included below the journey.
 
-ALTERNATIVE: DEPLOY FROM YOUR COMPUTER
-With Node.js installed, open a terminal inside the extracted folder and run:
-  npx vercel --prod
-Follow the sign-in and new-project prompts.
+UPDATE patakha.vercel.app
+1. Extract patakha-festival-v3.zip.
+2. Open the GitHub repository connected to this Vercel project.
+3. Choose Add file > Upload files. Upload ALL extracted files into the same
+   folder as the existing index.html, replacing matching files.
+   Do not upload the ZIP itself or nest the files inside a new folder.
+   audio.js and scene.js are new and must be included.
+4. Commit the changes to the production branch.
+5. Wait for the new Vercel deployment to show Ready, then refresh the game.
 
-NOTES
-Progress and high scores are saved separately for each browser and website
-address. Scores from the original hosted site will not automatically move
-to the new Vercel address. Fonts use Google Fonts with local font fallbacks.
+Vercel: Framework Other; empty Build Command; Output Directory .
+No dependencies, environment variables or build step are needed.
 
-Official guides:
-https://vercel.com/docs/deployments
-https://vercel.com/docs/builds/configure-a-build
-https://vercel.com/docs/cli/deploy
+EXISTING PLAYERS
+Keep the same production domain to preserve browser-local progress.
+Existing four-mission saves are read automatically. A player who unlocked
+Grand Finale will start with eight crackers and the Color Explorer mission.
+Their best score is preserved. Incognito mode, clearing browser data or
+moving domains can reset device-local progress.
+
+CHECKS
+Automated checks passed for all eight missions, old-save migration, distinct
+cracker goals, scoring and combos, pause/resume, last-second hits, results,
+all 12 visual effects, audio startup/mute/volume behavior, and ad preservation.
+Browser preview was unavailable during this update. The sound was not audited
+by listening in a live browser. Live ad delivery has not been verified.
+
+ADS
+The original user-supplied Adsterra code remains unchanged in ad-banner.html.
+The ad loads near the bottom of the page and never replaces game controls.
+Use hosting that permits commercial activity before enabling advertising.

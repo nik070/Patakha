@@ -1,0 +1,13 @@
+window.drawFestivalScene = function(ctx,W,H,time,stars) {
+  function arch(x,y,w,h,color){ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(x,y+h);ctx.lineTo(x,y+w/2);ctx.quadraticCurveTo(x+w/2,y-w*.22,x+w,y+w/2);ctx.lineTo(x+w,y+h);ctx.closePath();ctx.fill();}
+  function palace(x,base,w,h){ctx.fillStyle='#2e2339';ctx.fillRect(x,base-h,w,h);ctx.fillStyle='#59404a';ctx.fillRect(x,base-h,w,3);for(let i=0;i<5;i++){const wx=x+w*(i+.5)/5;arch(wx-4,base-h+17,8,16,'#c586554d');}const tw=w*.28;ctx.fillStyle='#33263e';ctx.fillRect(x+w*.36,base-h-h*.45,tw,h*.5);ctx.beginPath();ctx.moveTo(x+w*.31,base-h-h*.45);ctx.quadraticCurveTo(x+w*.32,base-h-h*.77,x+w*.5,base-h-h*.9);ctx.quadraticCurveTo(x+w*.68,base-h-h*.77,x+w*.69,base-h-h*.45);ctx.closePath();ctx.fill();ctx.strokeStyle='#795648';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x+w*.5,base-h-h*.9);ctx.lineTo(x+w*.5,base-h-h*1.06);ctx.stroke();arch(x+w*.45,base-h-h*.33,w*.1,h*.25,'#b47b5144');}
+  function background(time){const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#181529');bg.addColorStop(.6,'#292039');bg.addColorStop(1,'#563342');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);const glow=ctx.createRadialGradient(W*.5,H*.87,0,W*.5,H*.87,W*.45);glow.addColorStop(0,'#bb6d3b16');glow.addColorStop(1,'#bb6d3b00');ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);stars.forEach(s=>{ctx.globalAlpha=s.a*(.8+.2*Math.sin(time+s.x*20));ctx.fillStyle='#fae4c9';ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);ctx.fill();});ctx.globalAlpha=1;
+    // Scalloped marigold strings frame the festival courtyard.
+    ctx.strokeStyle='#9d6d4655';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(W*.25,95,W*.5,0);ctx.quadraticCurveTo(W*.75,95,W,0);ctx.stroke();for(let i=0;i<=64;i++){const x=i/64*W,u=(i%32)/32,y=4*47*u*(1-u);ctx.fillStyle=i%3===0?'#cd855c':'#ad734a';ctx.globalAlpha=.5;ctx.beginPath();ctx.arc(x,y+3,W<600?2:3,0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;
+    const base=H-27;for(let i=-1;i<11;i++){let w=W/9;palace(i*w,base,w*.85,48+(Math.sin(i*3.1)+1)*24);}palace(-20,base,155,110);palace(W-142,base,165,125);ctx.fillStyle='#211b2b';ctx.fillRect(0,H-43,W,43);ctx.fillStyle='#83604b';ctx.fillRect(0,H-43,W,2);
+    for(let i=0;i<16;i++){const x=(i+.5)*W/16,y=H-43;const g=ctx.createRadialGradient(x,y-4,0,x,y-4,17);g.addColorStop(0,'#ffaf4d55');g.addColorStop(1,'#ffaf4d00');ctx.fillStyle=g;ctx.fillRect(x-17,y-21,34,34);ctx.fillStyle='#f9c471';ctx.beginPath();ctx.ellipse(x,y-5,1.8,4,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#ba6e45';ctx.beginPath();ctx.ellipse(x,y+1,6,2.5,0,0,Math.PI);ctx.fill();}
+  }
+
+  background(time);
+};
+
